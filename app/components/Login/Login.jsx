@@ -11,6 +11,8 @@ import { browserHistory } from 'react-router';
 import axios from 'axios';
 import _ from 'lodash';
 
+var URL = process.env.VAULT_ADDRESS;
+
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -19,7 +21,7 @@ export default class Login extends React.Component {
             show: false,
             openSettings: false,
             authToken: "",
-            vaultUrl: window.localStorage.getItem("vaultUrl") || "",
+            vaultUrl: window.localStorage.getItem("vaultUrl") || URL,
             tmpVaultUrl: "",
             errorMessage: "",
             username: "",
